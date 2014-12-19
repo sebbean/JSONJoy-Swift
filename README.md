@@ -1,5 +1,5 @@
 JSONJoy
-=============
+============= 
 
 Convert JSON to Swift objects. The Objective-C counterpart can be found here: [JSONJoy](https://github.com/daltoniam/JSONJoy).
 
@@ -146,7 +146,7 @@ struct Scopes : JSONJoy {
     init(_ decoder: JSONDecoder) {
          decoder.getArray(&scopes) //pass the optional array by reference, it will be allocated if it is not and filled
     }
-}	
+}
 ```
 
 The second option is useful for embedded objects.
@@ -177,15 +177,15 @@ struct Addresses : JSONJoy {
     init() {
     }
     init(_ decoder: JSONDecoder) {
-		//we check if the array is valid then alloc our array and loop through it, creating the new address objects. 
+		//we check if the array is valid then alloc our array and loop through it, creating the new address objects.
 		if let addrs = decoder["addresses"].array {
 			addresses = Array<Address>()
 			for addrDecoder in addrs {
 				addresses.append(Address(addrDecoder))
-			}	
+			}
 		}
     }
-}	
+}
 ```
 
 ## SwiftHTTP
